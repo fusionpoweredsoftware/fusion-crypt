@@ -45,13 +45,20 @@ python crypt.sh yourfile.txt.enc
 ```
 This will decrypt `yourfile.txt.enc` and save the output to `yourfile.txt`, removing the original encrypted file.
 
+Certainly! Here's how you could revise the "Specifying a Key File" section of your `README.md` to make the usage instructions clear and concise, incorporating your suggested phrasing:
+
+
 #### Specifying a Key File
 
-If you want to specify a custom key file, you can pass it as a second argument:
+You can specify a custom key file by passing it as the second argument, regardless of whether you are encrypting or decrypting a file:
 ```bash
 python crypt.sh yourfile.txt yourkey.key
 ```
-This command uses `yourkey.key` for encrypting or decrypting `yourfile.txt`.
+This command uses `yourkey.key` for encrypting `yourfile.txt`. If the file is already encrypted (i.e., ends with `.enc`), the same command format is used for decryption:
+```bash
+python crypt.sh yourfile.txt.enc yourkey.key
+```
+The presence of `.enc` in the file name indicates to the script that the file should be decrypted.
 
 ## Note
 
