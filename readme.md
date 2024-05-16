@@ -11,7 +11,7 @@ This repository contains two scripts that provide functionality for secure key g
 
 - Python 3.x
 
-## genkey.sh
+## genkey.py
 
 This script generates a cryptographically secure key using Python's `os.urandom()` and saves it to a file named `encryption.key` by default.
 
@@ -19,11 +19,11 @@ This script generates a cryptographically secure key using Python's `os.urandom(
 
 Run the script from the command line:
 ```bash
-python genkey.sh
+python genkey.py
 ```
 This will generate a key and save it to `encryption.key`. You can specify a different filename by editing the script.
 
-## crypt.sh
+## crypt.py
 
 This script encrypts or decrypts files based on their extension (encrypts if normal, decrypts if `.enc`). It uses a key file (`encryption.key` by default) for the XOR encryption process.
 
@@ -33,7 +33,7 @@ This script encrypts or decrypts files based on their extension (encrypts if nor
 
 To encrypt a file, simply run:
 ```bash
-python crypt.sh yourfile.txt
+python crypt.py yourfile.txt
 ```
 This will generate `yourfile.txt.enc` if `yourfile.txt` is not already encrypted.
 
@@ -41,7 +41,7 @@ This will generate `yourfile.txt.enc` if `yourfile.txt` is not already encrypted
 
 To decrypt a file, ensure the file ends with `.enc` and run:
 ```bash
-python crypt.sh yourfile.txt.enc
+python crypt.py yourfile.txt.enc
 ```
 This will decrypt `yourfile.txt.enc` and save the output to `yourfile.txt`, removing the original encrypted file.
 
@@ -52,11 +52,11 @@ Certainly! Here's how you could revise the "Specifying a Key File" section of yo
 
 You can specify a custom key file by passing it as the second argument, regardless of whether you are encrypting or decrypting a file:
 ```bash
-python crypt.sh yourfile.txt yourkey.key
+python crypt.py yourfile.txt yourkey.key
 ```
 This command uses `yourkey.key` for encrypting `yourfile.txt`. If the file is already encrypted (i.e., ends with `.enc`), the same command format is used for decryption:
 ```bash
-python crypt.sh yourfile.txt.enc yourkey.key
+python crypt.py yourfile.txt.enc yourkey.key
 ```
 The presence of `.enc` in the file name indicates to the script that the file should be decrypted.
 
